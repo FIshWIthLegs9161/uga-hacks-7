@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 
-public class FaceDetector extends JFrame {
+public class FaceDetector {
 
     private static final long serialVersionUID = 1L;
 
@@ -42,17 +42,6 @@ public class FaceDetector extends JFrame {
         webcam.open(true);
         img = webcam.getImage();
         webcam.close();
-        ImagePanel panel = new ImagePanel(img);
-        panel.setPreferredSize(WebcamResolution.VGA.getSize());
-        add(panel);
-
-        setTitle("Face Recognizer");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pack();
-        setLocationRelativeTo(null);
-        setVisible(true);
-
-        new FaceDetector().detectFace();
     }
 
    // public static ImagePanel[][] imageKeeper = new ImagePanel[][];
@@ -72,17 +61,10 @@ public class FaceDetector extends JFrame {
         while (dfi.hasNext()) {
             DetectedFace face = dfi.next();
             FImage image1 = face.getFacePatch();
-            ImagePanel p = new ImagePanel(ImageUtilities.createBufferedImage(image1));
             Image image = SwingFXUtils.toFXImage(ImageUtilities.createBufferedImage(image1), null);
             imageKeeper.add(image);
 
-            fr.add(p);
         }
-
-        fr.setLayout(new FlowLayout(0));
-        fr.setSize(500,500);
-        fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        fr.setVisible(true);
 
         return imageKeeper;
         //printImageKeeper();

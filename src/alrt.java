@@ -53,8 +53,8 @@ public class alrt extends Application {
         alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("About Us");
         ButtonType close = new ButtonType("Close", ButtonData.OK_DONE);
-        alert.setContentText("Tahsin Nabi, tjn92948@uga.edu, Version 1.00");
-        Image aboutImg = new Image("https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-9/72687449_2519325251446909_5658522496542965760_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=KDvpmWbpk8cAX9msVcH&_nc_ht=scontent-atl3-1.xx&oh=97dfbd9aa31c78381893b05a8800f1bb&oe=61C0C9F7");
+        alert.setContentText("By Priya Nayak & Tahsin Nabi, Version 1.00");
+        Image aboutImg = new Image("file:resources/teamPic.jpg");
         ImageView imgView = new ImageView(aboutImg);
         imgView.setPreserveRatio(true);
         imgView.setFitHeight(300);

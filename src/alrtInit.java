@@ -1,5 +1,6 @@
 
 
+import face.FaceDetector;
 import javafx.geometry.Insets;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -24,6 +25,8 @@ import java.io.UnsupportedEncodingException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 import com.google.gson.JsonParser;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -109,7 +112,7 @@ public class alrtInit extends VBox {
 
         this.configNum = new HBox();
         this.numPrompt = new Label("Enter Phone Number: ");
-        this.number = new TextField("+14444444444");
+        this.number = new TextField("+15719696224");
 
         this.countdownBox = new HBox();
         this.countdown = new Text("minutes : seconds");
@@ -158,6 +161,10 @@ public class alrtInit extends VBox {
         contentBox.getChildren().addAll(configBox, goBox);
         this.getChildren().addAll(bannerFrame, contentBox, loadBox);
 
+        this.timeUp = new Alert(AlertType.WARNING);
+        timeUp.setContentText("Time is up! WatchDog letting you know :)");
+        timeUp.setTitle("Time is Up!");
+
         EventHandler<ActionEvent> handler = event -> {
             faceScan();
             stopwatch = stopwatch + timeInterval;
@@ -180,14 +187,14 @@ public class alrtInit extends VBox {
             duration = getDuration();
             userNum = getUserNum();
             userPhone = getUserPhone();
-            mascot.setImage(new Image ("file::resources/dogClosed.png"));
+            mascot.setImage(new Image ("file:resources/dogClosed.png"));
             privacyFilter();
             System.out.println("duration= " + duration + "\n" +"users= " + userNum + "\n" + "Phone#= " + userPhone);
         } else
         {
             toggle.setText("WatchDog Off");
             stopwatch = 0;
-            mascot.setImage(new Image ("file::resources/dogOpen.png"));
+            mascot.setImage(new Image ("file:resources/dogOpen.png"));
             timeline.pause();
             countdown.setText("minutes : seconds");
         }
@@ -242,10 +249,18 @@ public class alrtInit extends VBox {
     public void faceScan() {
         //if face scan detects a > num of users than the expected value or the  0< duration is  <= time elapsed
         //return either an alert that there is a new user or that time is up
+        //FaceDetector scanner = new FaceDetector();
+        //ArrayList<Image> specs = scanner.detectFace();
 
-        if ((0 <= duration)  || (duration <= stopwatch)) {
+        if ((duration <= stopwatch)) {
             //Platform.runLater(() -> timeUp.showAndWait());
-        }
+            Platform.runLater(() -> timeUp.showAndWait());
+            toggle.fire();
+        } //else if (specs.size() > userNum) {
+            //Alert x = new imageAlert(specs, userPhone);
+            // if retursnnull then set duration to - 10
+            //x.showAndWait();
+        //}
     }
 
     //returns the time elapsed in minutes and seconds

@@ -3,6 +3,7 @@ import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.TilePane;
 
 import com.twilio.Twilio;
@@ -16,20 +17,34 @@ import java.util.ArrayList;
 public class imageAlert extends Alert {
 
     TilePane spectators;
-    public static final String ACCOUNT_SID = System.getenv("TWILIO_ACCOUNT_SID");
-    public static final String AUTH_TOKEN = System.getenv("TWILIO_AUTH_TOKEN");
+    public static final String ACCOUNT_SID = System.getenv("AC0c9aab6167e5a8e51ed47e618756df69");
+    public static final String AUTH_TOKEN = System.getenv("9f2f116dc55338c41d1fdd521acc6464");
 
-    public imageAlert(ArrayList<Image> spectators) {
+    public imageAlert(ArrayList<Image> spectators, String phoneNum) {
         super(AlertType.INFORMATION);
+        //calling the api
+        String alertText = "Intruder Alert!, WatchDog found somebody snooping.";
+        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        Message message = Message.creator(
+                new com.twilio.type.PhoneNumber(phoneNum),
+                "MG1706077535a377978302207c8ea186b7",
+                alertText)
+                .create();
 
+        System.out.println(message.getSid());
+
+        HBox specFrames = new HBox();
         this.setTitle("Intruder Alert!");
         ButtonType close = new ButtonType("Close", ButtonBar.ButtonData.OK_DONE);
-        this.setContentText("Tahsin Nabi, tjn92948@uga.edu, Version 1.00");
-        //Image aboutImg = new Image("https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-9/72687449_2519325251446909_5658522496542965760_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=KDvpmWbpk8cAX9msVcH&_nc_ht=scontent-atl3-1.xx&oh=97dfbd9aa31c78381893b05a8800f1bb&oe=61C0C9F7");
-        //ImageView imgView = new ImageView(aboutImg);
-        //imgView.setPreserveRatio(true);
-        //imgView.setFitHeight(300);
-        //this.setGraphic(imgView);
-        this.setResizable(true);
+        this.setContentText("Found an Intruder!");
+
+        for(Image spec: spectators) {
+            ImageView specFrame = new ImageView(spec);
+            specFrames.getChildren().add(specFrame);
+            //imgView.setPreserveRatio(true);
+            //imgView.setFitHeight(300);
+        }
+        this.setResizable(false);
+        this.setGraphic(specFrames);
     }
 }
