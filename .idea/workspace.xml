@@ -7,6 +7,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -22,9 +29,23 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/repository/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="ugaHacks7Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ugaHacks7Driver" />
+      <module name="uga-hacks-7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ugaHacks7Driver" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -38,14 +59,18 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="303" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1645311587275">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="303" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1645311587275" />
     <state x="473" y="150" key="FileChooserDialogImpl" timestamp="1645309911575">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="473" y="150" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1645309911575" />
-    <state x="0" y="0" key="SettingsEditor" timestamp="1645311512415">
+    <state x="0" y="0" key="SettingsEditor" timestamp="1645312401812">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="0" y="0" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1645311512415" />
+    <state x="0" y="0" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1645312401812" />
     <state x="498" y="300" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1645310067066">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
