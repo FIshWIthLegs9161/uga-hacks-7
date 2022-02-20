@@ -30,10 +30,10 @@ public class alrt extends Application {
     @Override
     public void start(Stage stage) {
         VBox pane = new VBox();
-        Scene scene = new Scene(pane, 502, 520);
-        stage.setMaxWidth(502);
-        stage.setMaxHeight(520);
-        stage.setTitle("GalleryApp!");
+        Scene scene = new Scene(pane, 500, 500);
+        stage.setMaxWidth(500);
+        stage.setMaxHeight(500);
+        stage.setTitle("WatchDog!");
         stage.setScene(scene);
         stage.sizeToScene();
         stage.show();

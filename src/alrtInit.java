@@ -55,6 +55,9 @@ public class alrtInit extends VBox {
     TextField timeCount;
     Text countdown;
     HBox countdownBox;
+    TextField number;
+    Label numPrompt;
+    HBox configNum;
 
     VBox goBox;
     ImageView mascot;
@@ -64,12 +67,30 @@ public class alrtInit extends VBox {
     Text timer;
     ProgressBar loadBar;
 
+
+    boolean privacy;
+    Timeline timeline;
+    int stopwatch;
+    int timeInterval; //rate of scanning in seconds
+    int duration; //how long session, by default -1 menaing indefinite
+    int userNum;
+    String userPhone;
+
     /**
      * This is the constructor for the gallery tab which is a component which contains all needed
      * nodes for project 4 excluding the menu bar containging exit and about.
      **/
     public alrtInit() {
         super(); //call the super constructor of VBox
+
+        this.userNum = 1; //1 by default
+        this.timeInterval = 1; //rate of scanning, should be a constant tbh
+        this.stopwatch = 0;
+        this.duration = -1; //by default negative, meanign indefinite
+        this.userPhone = "+15719696224";
+
+        this.privacy = false;
+
         Image placeholder = new Image("file:resources/Banner.png");
         Image placeholder1 = new Image("file:resources/dog.png");
         this.contentBox = new HBox();
@@ -79,18 +100,22 @@ public class alrtInit extends VBox {
 
         this.configSpec = new HBox();
         this.specPrompt = new Label("Enter # Spectators: ");
-        this.specCount = new TextField("spec x");
+        this.specCount = new TextField("1");
 
         this.configTime = new HBox();
         this.timePrompt = new Label("Please enter duration: ");
-        this.timeCount = new TextField("time x");
+        this.timeCount = new TextField("30");
+
+        this.configNum = new HBox();
+        this.numPrompt = new Label("Enter Phone Number: ");
+        this.number = new TextField("+14444444444");
 
         this.countdownBox = new HBox();
-        this.countdown = new Text("00:00 left");
+        this.countdown = new Text("minutes : seconds");
 
         this.goBox = new VBox();
         this.mascot = new ImageView();
-        this.toggle = new Button("Alert Go!");
+        this.toggle = new Button("WatchDog Off");
         this.timer = new Text("Loading...");
         this.loadBar = new ProgressBar(1);
 
@@ -103,23 +128,26 @@ public class alrtInit extends VBox {
         mascot.setFitHeight(160);
 
         this.goBox.setAlignment(Pos.CENTER);
-        goBox.setPadding(new Insets(.1,.0,.1,.0));
+        goBox.setPadding(new Insets(.1, .0, .1, .0));
         //toggle.setPadding(new Insets(0,0,0,0));
 
         timer.setTextAlignment(TextAlignment.RIGHT);
 
         configSpec.setAlignment(Pos.CENTER);
         configTime.setAlignment(Pos.CENTER);
-        configBox.setPadding(new Insets(20,1.5,.25,1.5));
-        configTime.setPadding(new Insets(20,1.5,5,1.5));
-        configSpec.setPadding(new Insets(20,1.5,5,1.5));
+        configBox.setPadding(new Insets(20, 1.5, .25, 1.5));
+        configTime.setPadding(new Insets(20, 1.5, 5, 1.5));
+        configSpec.setPadding(new Insets(20, 1.5, 5, 1.5));
+        configNum.setPadding(new Insets(20, 1.5, 5, 1.5));
 
         configSpec.getChildren().addAll(specPrompt, specCount);
         configTime.getChildren().addAll(timePrompt, timeCount);
+        configNum.getChildren().addAll(numPrompt, number);
 
         countdownBox.getChildren().add(countdown);
         goBox.getChildren().addAll(mascot, toggle);
-        configBox.getChildren().addAll(configSpec, configTime, countdownBox);
+        configBox.getChildren().addAll(configSpec, configTime,configNum, countdownBox);
+        toggle.setOnAction(this::privacyToggle);
 
         countdown.setTextAlignment(TextAlignment.CENTER);
         countdown.setFont(new Font(20));
@@ -129,10 +157,117 @@ public class alrtInit extends VBox {
         contentBox.getChildren().addAll(configBox, goBox);
         this.getChildren().addAll(bannerFrame, contentBox, loadBox);
 
+        EventHandler<ActionEvent> handler = event -> {
+            faceScan();
+            stopwatch = stopwatch + timeInterval;
+            countdown.setText(getTime());
+        };
+        timelineStart(handler); //start the timeline shuffling
+    }
 
-        
+    /**
+     * This method shoudl toggle the new generation of random images wihtin the tile pane.
+     * NOTE THAT THIS WILL BE ON BY DEFAULT AND CALL THE TIMELINE to function.
+     *
+     * @param e is an action event such that this method can be tied to a physical button
+     **/
+    public void privacyToggle(ActionEvent e) {
+        privacy = !privacy;
+        if (privacy)
+        {
+            toggle.setText("WatchDog On"); //change button text
+            duration = getDuration();
+            userNum = getUserNum();
+            userPhone = getUserPhone();
+            privacyFilter();
+            System.out.println("duration= " + duration + "\n" +"users= " + userNum + "\n" + "Phone#= " + userPhone);
+        } else
+        {
+            toggle.setText("WatchDog Off");
+            stopwatch = 0;
+            timeline.pause();
+            countdown.setText("minutes : seconds");
+        }
+    }
+
+    //this is the core privacy filter method which will start the timeline
+    public void privacyFilter() {
+        timeline.play();
+    }
+
+    /**
+     * Starts the timeline which will be paused when toggled by button.
+     * This code was taken fromt the project description, i dont fully get it lol.
+     *
+     * @param handler this handler defines the code which runs in 2 second intervals
+     **/
+    public void timelineStart(EventHandler<ActionEvent> handler) {
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(timeInterval), handler);
+        timeline = new Timeline();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.getKeyFrames().add(keyFrame);
+        //timeline.play(); //start the timeline by default
+
+    }
+
+    //general methods
+
+    /**
+     * This method is used as a helper method to run any threads which are defined by
+     * a lambda expression which extends runnable.
+     *
+     * @param x tis refers to some class which extends runnable and is therefore- runnable lol
+     **/
+    public static void runThread(Runnable x) {
+        Thread t = new Thread(x);
+        t.setDaemon(false);
+        t.start();
+    }
+
+    /**
+     * Dr Barnes method from the project documentation.
+     *
+     * @param progress this final double represents the percent of loading complete in the bar
+     **/
+    private void setProgress(final double progress) {
+        Platform.runLater(() -> loadBar.setProgress(progress));
+    } // setProgress
+
+    /**
+     * This method will by jtied to the time line and be called in intervals to scan for faces
+     */
+    public void faceScan() {
+        //if face scan detects a > num of users than the expected value or the  0< duration is  <= time elapsed
+        //return either an alert that there is a new user or that time is up
+    }
+
+    //returns the time elapsed in minutes and seconds
+    public String getTime() {
+        int seconds = stopwatch % 60;
+        int minutes = stopwatch / 60;
+        String rtn = minutes + " : " + seconds;
+        return rtn;
+    }
+
+    //get time duration in seconds
+    public int getDuration() {
+        int rtn = Integer.parseInt(timeCount.getText());
+        rtn *= 60;
+        return rtn;
+
+    }
+
+    public int getUserNum() {
+        int rtn = Integer.parseInt(specCount.getText());
+        return rtn;
+    }
+
+    public String getUserPhone() {
+        return number.getText();
     }
 
 
-
 }
+
+
+
