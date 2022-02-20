@@ -66,6 +66,7 @@ public class alrtInit extends VBox {
     //these nodes represent the progress bar
     Text timer;
     ProgressBar loadBar;
+    Alert timeUp; //time is up display this alert
 
 
     boolean privacy;
@@ -179,12 +180,14 @@ public class alrtInit extends VBox {
             duration = getDuration();
             userNum = getUserNum();
             userPhone = getUserPhone();
+            mascot.setImage(new Image ("file::resources/dogClosed.png"));
             privacyFilter();
             System.out.println("duration= " + duration + "\n" +"users= " + userNum + "\n" + "Phone#= " + userPhone);
         } else
         {
             toggle.setText("WatchDog Off");
             stopwatch = 0;
+            mascot.setImage(new Image ("file::resources/dogOpen.png"));
             timeline.pause();
             countdown.setText("minutes : seconds");
         }
@@ -239,6 +242,10 @@ public class alrtInit extends VBox {
     public void faceScan() {
         //if face scan detects a > num of users than the expected value or the  0< duration is  <= time elapsed
         //return either an alert that there is a new user or that time is up
+
+        if ((0 <= duration)  || (duration <= stopwatch)) {
+            //Platform.runLater(() -> timeUp.showAndWait());
+        }
     }
 
     //returns the time elapsed in minutes and seconds
@@ -258,8 +265,8 @@ public class alrtInit extends VBox {
     }
 
     public int getUserNum() {
-        int rtn = Integer.parseInt(specCount.getText());
-        return rtn;
+        return Integer.parseInt(specCount.getText());
+
     }
 
     public String getUserPhone() {

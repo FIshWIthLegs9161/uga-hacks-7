@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="61c32feb-de86-488d-b3e9-28bd607e42a3" name="Default Changelist" comment="" />
+    <list default="true" id="61c32feb-de86-488d-b3e9-28bd607e42a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/twilio_8_26_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dogClosed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/dogOpen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uga-hacks-7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uga-hacks-7.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uga-hacks-7/alrtInit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uga-hacks-7/alrtInit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/alrtInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/alrtInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/face/FaceDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/face/FaceDetector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imageAlert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/imageAlert.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,8 +56,9 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/repository/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jar_files" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -58,19 +87,55 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="223" y="63" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1645347971649">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="223" y="63" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.816@0.0.1536.816" timestamp="1645347971649" />
     <state x="303" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1645311587275">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="303" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1645311587275" />
-    <state x="473" y="150" key="FileChooserDialogImpl" timestamp="1645309911575">
+    <state x="498" y="198" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1645347970250">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="473" y="150" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1645309911575" />
-    <state x="0" y="0" key="SettingsEditor" timestamp="1645312401812">
+    <state x="498" y="198" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.816@0.0.1536.816" timestamp="1645347970250" />
+    <state x="473" y="150" key="FileChooserDialogImpl" timestamp="1645347802538">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="0" y="0" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1645312401812" />
+    <state x="473" y="150" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1645347802538" />
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1645349303769">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1645349303769" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1645349303769">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1645349303769" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1645349303769">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1645349303769" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1645349303769">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1645349303769" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1645347804262">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="0" y="0" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1645347804262" />
     <state x="498" y="300" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1645310067066">
       <screen x="0" y="0" width="1536" height="816" />
     </state>

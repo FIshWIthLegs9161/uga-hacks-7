@@ -9,6 +9,7 @@ import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamResolution;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
+import org.apache.xmlgraphics.image.loader.cache.ImageKey;
 import org.openimaj.image.FImage;
 import org.openimaj.image.ImageUtilities;
 import org.openimaj.image.processing.face.detection.DetectedFace;
@@ -18,6 +19,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.Iterator;
 import java.util.List;
 
@@ -49,18 +51,21 @@ public class FaceDetector extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+
+        new FaceDetector().detectFace();
     }
 
    // public static ImagePanel[][] imageKeeper = new ImagePanel[][];
-    static ArrayList<Image> imageKeeper = new ArrayList<Image>();
-    int size = 0;
 
-    public void detectFace(){
+
+    //will return an array list of images of peoples faces, will return null if nobody is found
+    public ArrayList<Image> detectFace(){
+        ArrayList<Image> imageKeeper = new ArrayList<Image>();
         JFrame fr=new JFrame("Discovered Faces");
         faces = detector.detectFaces(ImageUtilities.createFImage(img));
         if (faces == null) {
             System.out.println("No faces found in the captured image");
-            return;
+            return null;
         }
 
         Iterator<DetectedFace> dfi = faces.iterator();
@@ -79,15 +84,12 @@ public class FaceDetector extends JFrame {
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setVisible(true);
 
-        size = imageKeeper.size();
-        printImageKeeper();
+        return imageKeeper;
+        //printImageKeeper();
     }
+
 
     public void printImageKeeper() {
-       System.out.println(size + " people are watching");
+       System.out.println("x  people are watching");
     }
-
-    public static void main(String[] args) throws IOException {
-           new FaceDetector().detectFace();
-       }
 }
