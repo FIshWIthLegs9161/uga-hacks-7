@@ -1,4 +1,4 @@
-# uga-hacks-7
+# WatchDawg: uga-hacks-7
 
 ## Inspiration
 - We wish to improve personal security for people in public spaces so that their information is inaccessible to wandering eyes. 
