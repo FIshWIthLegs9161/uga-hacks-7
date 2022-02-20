@@ -51,7 +51,7 @@ public class alrt extends Application {
 
         //this block of code will setup the about me section
         alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("About Tahsin Nabi");
+        alert.setTitle("About Us");
         ButtonType close = new ButtonType("Close", ButtonData.OK_DONE);
         alert.setContentText("Tahsin Nabi, tjn92948@uga.edu, Version 1.00");
         Image aboutImg = new Image("https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-9/72687449_2519325251446909_5658522496542965760_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=KDvpmWbpk8cAX9msVcH&_nc_ht=scontent-atl3-1.xx&oh=97dfbd9aa31c78381893b05a8800f1bb&oe=61C0C9F7");

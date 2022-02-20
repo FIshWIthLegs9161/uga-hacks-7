@@ -3,10 +3,10 @@ import javafx.application.Application;
 public class ugaHacks7Driver {
 
     public static void main(String[] args) {
-        try {
+       // try {
             Application.launch(alrt.class, args); //this will start the javafx applicaiton
-        } catch (Exception e) {
-            System.err.println(e.getMessage()); //print any errors without crashing the program for debugging
-        }
+      //  } catch (Exception e) {
+            //System.err.println(e.getMessage()); //print any errors without crashing the program for debugging
+        //}
     }
 }
