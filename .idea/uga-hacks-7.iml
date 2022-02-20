@@ -11,5 +11,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="gson-2.8.9" level="project" />
     <orderEntry type="library" name="com.google.code.gson:gson:2.8.9" level="project" />
+    <orderEntry type="library" name="webcam-capture-0.3.12" level="project" />
+    <orderEntry type="library" name="image-processing-1.3.10" level="project" />
+    <orderEntry type="library" name="jar_files" level="project" />
   </component>
 </module>
