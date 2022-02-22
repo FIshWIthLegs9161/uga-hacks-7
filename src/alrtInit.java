@@ -96,22 +96,22 @@ public class alrtInit extends VBox {
         this.privacy = false;
 
         Image placeholder = new Image("file:resources/Banner.png");
-        Image placeholder1 = new Image("file:resources/dog.png");
+        Image placeholder1 = new Image("file:resources/dogOpen.png");
         this.contentBox = new HBox();
         this.loadBox = new HBox();
 
         this.configBox = new VBox();
 
         this.configSpec = new HBox();
-        this.specPrompt = new Label("Enter # Spectators: ");
+        this.specPrompt = new Label("Spectators: ");
         this.specCount = new TextField("1");
 
         this.configTime = new HBox();
-        this.timePrompt = new Label("Please enter duration: ");
+        this.timePrompt = new Label("Session Time (min): ");
         this.timeCount = new TextField("30");
 
         this.configNum = new HBox();
-        this.numPrompt = new Label("Enter Phone Number: ");
+        this.numPrompt = new Label("Phone Number: ");
         this.number = new TextField("+15719696224");
 
         this.countdownBox = new HBox();
@@ -159,7 +159,7 @@ public class alrtInit extends VBox {
 
         loadBox.getChildren().addAll(loadBar, timer);
         contentBox.getChildren().addAll(configBox, goBox);
-        this.getChildren().addAll(bannerFrame, contentBox, loadBox);
+        this.getChildren().addAll(bannerFrame, contentBox); //when reimplementing in the future add the loadbox here
 
         this.timeUp = new Alert(AlertType.WARNING);
         timeUp.setContentText("Time is up! WatchDog letting you know :)");

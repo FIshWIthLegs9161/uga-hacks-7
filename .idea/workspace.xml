@@ -19,14 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61c32feb-de86-488d-b3e9-28bd607e42a3" name="Default Changelist" comment="Going good, still no api stuff yet tho">
-      <change afterPath="$PROJECT_DIR$/src/api/twilio-8.26.0.jar" afterDir="false" />
+    <list default="true" id="61c32feb-de86-488d-b3e9-28bd607e42a3" name="Default Changelist" comment="Did not integrate the API's &amp; facial recognition with the actual app itself">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uga-hacks-7/alrt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uga-hacks-7/alrt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/uga-hacks-7/alrtInit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uga-hacks-7/alrtInit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/banner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/alrt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/alrt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/alrtInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/alrtInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/face/FaceDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/face/FaceDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imageAlert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/imageAlert.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,11 +42,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="25LbkuAX6SISj9IXKeDKK23XMWl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -95,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645349397012</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Did not integrate the API's &amp; facial recognition with the actual app itself">
+      <created>1645355204387</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645355204387</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,8 +120,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Going good, still no api stuff yet tho" />
-    <option name="LAST_COMMIT_MESSAGE" value="Going good, still no api stuff yet tho" />
+    <MESSAGE value="Did not integrate the API's &amp; facial recognition with the actual app itself" />
+    <option name="LAST_COMMIT_MESSAGE" value="Did not integrate the API's &amp; facial recognition with the actual app itself" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="63" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1645347971649">
@@ -131,26 +142,30 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="473" y="150" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1645347802538" />
-    <state width="822" height="208" key="GridCell.Tab.0.bottom" timestamp="1645354841178">
+    <state width="822" height="208" key="GridCell.Tab.0.bottom" timestamp="1645430731117">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="822" height="208" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1645354841178" />
-    <state width="822" height="208" key="GridCell.Tab.0.center" timestamp="1645354841178">
+    <state width="822" height="208" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1645430731117" />
+    <state width="822" height="208" key="GridCell.Tab.0.center" timestamp="1645430731117">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="822" height="208" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1645354841178" />
-    <state width="822" height="208" key="GridCell.Tab.0.left" timestamp="1645354841178">
+    <state width="822" height="208" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1645430731117" />
+    <state width="822" height="208" key="GridCell.Tab.0.left" timestamp="1645430731117">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="822" height="208" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1645354841178" />
-    <state width="822" height="208" key="GridCell.Tab.0.right" timestamp="1645354841178">
+    <state width="822" height="208" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1645430731117" />
+    <state width="822" height="208" key="GridCell.Tab.0.right" timestamp="1645430731117">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="822" height="208" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1645354841178" />
+    <state width="822" height="208" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1645430731117" />
     <state x="0" y="0" key="SettingsEditor" timestamp="1645347804262">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="0" y="0" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1645347804262" />
+    <state x="697" y="128" key="Vcs.Push.Dialog.v2" timestamp="1645355206096">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="697" y="128" key="Vcs.Push.Dialog.v2/0.0.1536.816@0.0.1536.816" timestamp="1645355206096" />
     <state x="498" y="300" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1645310067066">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
